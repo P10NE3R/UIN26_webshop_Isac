@@ -18,6 +18,44 @@ function fetchProducts() {
 }
 
 fetchProducts()
+//Vis handlevogn
+function showCart(){
+    
+    //Unike produkter
+    let uniqueItems = new Set(cart)
+    let uniqueArray = [...uniqueItems]
+    
+    //Oversikt over antall per produkt
+    let cartItems = []
+
+    //map gårgjnneom listen
+    uniqueArray.map(item => {
+        cartItems.push({prodid: item, quantity: cart.filter(i => i === item).length})
+        
+    })
+
+    //Gå igjennom cart items for å lage HTML til handlekurven og regne ut totalpris
+    let cartHTML = ""
+    let totalPrice = 0
+    
+    cartItems.map(ci => {
+        //Hente produktinformasjon
+        let product = products.find(i => i.prodid === ci.prodid)
+        //Skrive ut HTML
+        cartHTML += `<tr>
+                <td class="title">${product.title}</td>
+                <td class="price">${product.price}</td>
+                <td class="quantity">${ci.quantity}</td>
+                <td class="delete"><button>x</button></td>
+            </tr>`
+
+        //Summere totalpris
+        totalPrice += ci.quantity * product.price
+    })
+    document.getElementById("cart-items").innerHTML = cartHTML
+}
+
+
 
 //Legg til i handlevogn
 function addToCart(prodid) {
@@ -25,4 +63,8 @@ function addToCart(prodid) {
     cart.push(prodid)
     console.log(cart)
     document.getElementById("cart-quantity").innerHTML = cart.length
+    
+    
+    showCart()
+
 }
