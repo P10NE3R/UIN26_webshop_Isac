@@ -42,7 +42,8 @@ function showCart(){
         //Hente produktinformasjon
         let product = products.find(i => i.prodid === ci.prodid)
         //Skrive ut HTML
-        cartHTML += `<tr>
+        cartHTML += 
+            `<tr>
                 <td class="title">${product.title}</td>
                 <td class="price">${product.price}</td>
                 <td class="quantity">${ci.quantity}</td>
@@ -53,6 +54,7 @@ function showCart(){
         totalPrice += ci.quantity * product.price
     })
     document.getElementById("cart-items").innerHTML = cartHTML
+    document.getElementById("total-price").innerHTML = totalPrice
 }
 
 
