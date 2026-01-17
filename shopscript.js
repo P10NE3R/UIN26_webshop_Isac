@@ -45,16 +45,32 @@ function showCart(){
         cartHTML += 
             `<tr>
                 <td class="title">${product.title}</td>
-                <td class="price">${product.price}</td>
+                <td class="price">${product.price} kr</td>
                 <td class="quantity">${ci.quantity}</td>
-                <td class="delete"><button>x</button></td>
+                <td class="delete"><button onClick="deleteFromCart(${product.prodid})">X</button></td>
             </tr>`
 
         //Summere totalpris
-        totalPrice += ci.quantity * product.price
+        totalPrice += Number(ci.quantity) * Number(product.price)
     })
+    if(cartHTML.length === 0){
+        cartHTML +="<tr><td>Ingen varer i handlevognen.</td><tr>"
+    }
+
+    //Oppdaterer HTML elementer
     document.getElementById("cart-items").innerHTML = cartHTML
     document.getElementById("total-price").innerHTML = totalPrice
+    document.getElementById("cart-quantity").innerHTML = cart.length
+}
+
+//slette fra handlevogn
+function deleteFromCart(prodid){
+    let deleteIndex = cart.indexOf(prodid)
+    if(deleteIndex > -1){
+        cart.splice(deleteIndex, 1)
+    }
+    //Oppdatere handlevognutskrift
+     showCart()
 }
 
 
@@ -64,7 +80,7 @@ function addToCart(prodid) {
     console.log("Legg til produkt med id: " + prodid)
     cart.push(prodid)
     console.log(cart)
-    document.getElementById("cart-quantity").innerHTML = cart.length
+    
     
     
     showCart()
