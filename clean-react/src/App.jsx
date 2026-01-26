@@ -7,9 +7,14 @@ import Title from './components/Title'
 
 function App() {
   
+  const titles = ["Kategorier","Om oss","Produkter"]
+
+
   return (
-      <main>
-        <Title/>
+      /*Her sendes title til komonent der hvor det blir skrvet ut. */
+      <main>      
+        
+        {titles.map((item, i)=> <Title key={i} title={item}/>)}
         <h2>Dette er kjempegøy!</h2>
       </main>
   )
