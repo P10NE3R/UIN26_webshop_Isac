@@ -1,0 +1,17 @@
+ul{
+    list-style: none;
+    padding: 0;
+    
+    flex-direction: column;
+    li{
+        display: flex;
+        justify-content: space-between;
+       
+        input{
+            border: none;
+            padding: 10px;
+            color-scheme: light;
+        }
+       
+    }
+}
