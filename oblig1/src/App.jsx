@@ -10,19 +10,20 @@ function App() {
       {
         id:0,
         title:"Melk",
-        count: 2
+        count: 2,
+        bought:false
       },
       
       {
         id:1,
         title:"Egg",
-        count: 1
+        count: 1,
+        bought: true
       }
   ]
   
-  /*Holder på listen med alle varene*/
-  const [shoppingList, setShoppingList] = useState(shoppingItems)
 
+  const [shoppingList, setShoppingList] = useState(shoppingItems)
   const [shoppingItem, setShoppingItem] = useState()
   
   
@@ -35,7 +36,7 @@ function App() {
     
       
       <AddForm shoppingItem={shoppingItem} setShoppingItem={setShoppingItem} setShoppingList={setShoppingList}/>
-      <ShoppingList shoppingItems={shoppingList} setShoppingItem={setShoppingItem}/>
+      <ShoppingList shoppingItems={shoppingList} setShoppingItem={setShoppingItem} setShoppingList={setShoppingList}/>
       
     </main>
   )

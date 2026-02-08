@@ -1,50 +1,41 @@
-export default function ShoppingItem({title, count, id, setShoppingList, setShoppingItem}){
-    
-    
-    const handleClick = ()=>{
-        setShoppingList((prev) => prev.filter(shoppingItem => shoppingItem.id !== id))
-        console.log(id)
-    }
+import ShoppingList from "./ShoppingList"
 
-    const handleChange = (e) => {
-        const{value} = e.target
-        
+export default function ShoppingItem({title, count, id, setShoppingList, bought, shoppingItem}){
     
-        
-        setShoppingItem((prev) => ({
-            ...prev,
-            count: Number(value)
-        }))
     
-    }
+ const handleChange = (e) => {
+    const newCount = Number(e.target.value)
+
+    setShoppingList(prev => 
+        prev.map(item => item.id === id ? 
+            { ...item, count: newCount }: item)
+    )
+}
 
 
     return(
         <li>
-                
                 <input 
+                    key={id}
                     aria-label="Check if item is bought"
                     type="checkbox"
-                    id="boxitembought"
-                    onClick={handleClick}
-          
-                    
+                    checked = {bought}
                 />
                 <p>{title}</p>
                 {
 
                 }
                 <input
+                    key={id}
                     aria-label="item amount"
                     name="count" 
                     type="number"
-                    id="count"
-                    value={count}
+                    class="itemlistcount"
                     min={1}
                     onChange={handleChange}
-                    />
+                    value={count}
+                    required
+                />
             </li>
     )
-
-    
 }

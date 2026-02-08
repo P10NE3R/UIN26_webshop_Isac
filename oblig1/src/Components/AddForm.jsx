@@ -2,7 +2,7 @@ import "../style/form.scss"
 
 export default function AddForm({shoppingItem, setShoppingItem, setShoppingList}){
     
-    //Håndterer verdiene puttet inn i feltene 
+ 
     const handleChange = (e) => {
         const{ name, value } = e.target
         console.log(name, value)
@@ -15,14 +15,12 @@ export default function AddForm({shoppingItem, setShoppingItem, setShoppingList}
     
     }
 
-
-    
-   
-
     const handleClick = (e)=>{
         e.preventDefault()
         const uniqId = crypto.randomUUID()
-        setShoppingList((prev) => ([...prev, {id:uniqId,...shoppingItem}]))
+        
+        //Her så settes prev på baksiden for å putte de nye objektene forran i listen
+        setShoppingList((prev) => ([{id:uniqId, ...shoppingItem}, ...prev]))
         console.log(shoppingItem)
     }
 
@@ -51,7 +49,6 @@ export default function AddForm({shoppingItem, setShoppingItem, setShoppingList}
             <input
                 name="count" 
                 type="number"
-
                 placeholder={2}
                 min={1}
                 required

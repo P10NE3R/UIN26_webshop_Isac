@@ -9,7 +9,7 @@ export default function ShoppingList({shoppingList, setShoppingList, shoppingIte
 
         <section>
             <ul>
-                {shoppingItems.map((shoppingItem) => <ShoppingItem key={shoppingItem.id} title={shoppingItem.title} count={shoppingItem.count} id={shoppingItem.id} setShoppingList={setShoppingList} setShoppingItem={setShoppingItem}/>)}
+                {shoppingItems.map((shoppingItem) => <ShoppingItem key={shoppingItem.id} title={shoppingItem.title} count={shoppingItem.count} id={shoppingItem.id} setShoppingList={setShoppingList} setShoppingItem={setShoppingItem} shoppingList={shoppingList} bought={shoppingItem.bought}/>)}
             </ul>
         </section>
     )
