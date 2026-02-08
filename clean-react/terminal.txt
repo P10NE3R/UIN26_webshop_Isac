@@ -1,6 +1,8 @@
 /* oprett nytt prosjekt */
-npm install 
+
 npm create vite@latest  . -- --template react
+npm install 
+
 
 
 /* Start server */

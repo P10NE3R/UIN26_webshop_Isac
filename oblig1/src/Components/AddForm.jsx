@@ -2,7 +2,7 @@ import "../style/form.scss"
 
 export default function AddForm({shoppingItem, setShoppingItem, setShoppingList}){
     
-    
+    //Håndterer verdiene puttet inn i feltene 
     const handleChange = (e) => {
         const{ name, value } = e.target
         console.log(name, value)
