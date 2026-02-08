@@ -15,11 +15,12 @@ export default function AddForm({shoppingItem, setShoppingItem, setShoppingList}
     
     }
 
+     //Hensikten med denne delen er å legge til ting som skal handles. Dette blir gjort først i listen
     const handleClick = (e)=>{
         e.preventDefault()
         const uniqId = crypto.randomUUID()
         
-        //Her så settes prev på baksiden for å putte de nye objektene forran i listen
+        //Her så settes prev på framsiden for å putte de nye objektene forran i listen, man kan flytte ...prev på baksiden for å legge til bakerst i listen
         setShoppingList((prev) => ([{id:uniqId, ...shoppingItem}, ...prev]))
         console.log(shoppingItem)
     }
