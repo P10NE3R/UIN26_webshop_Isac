@@ -29,7 +29,7 @@ export default function AddForm({shoppingItem, setShoppingItem, setShoppingList}
 
 
     return(
-        <form className="itemform">
+        <form className="itemform" onSubmit={handleClick}>
             <label htmlFor='itemname'>Vare</label>
             {
 
@@ -40,24 +40,26 @@ export default function AddForm({shoppingItem, setShoppingItem, setShoppingList}
                 type="text"
                 id='itemname'
                 placeholder='Egg..'
+                required
                 onChange={handleChange}
             />
             
-            <label htmlFor='itemcount'>Antall</label>
+            <label htmlFor='count'>Antall</label>
             {
 
             }
             <input
                 name="count" 
                 type="number"
-                id="count"
+
                 placeholder={2}
                 min={1}
+                required
                 onChange={handleChange}
             /> 
             
         
-        <button onClick={handleClick}>Legg til vare</button>
+        <button>Legg til vare</button>
       </form>
     )
 }

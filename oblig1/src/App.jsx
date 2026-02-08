@@ -35,7 +35,8 @@ function App() {
     
       
       <AddForm shoppingItem={shoppingItem} setShoppingItem={setShoppingItem} setShoppingList={setShoppingList}/>
-      <ShoppingList shoppingItems={shoppingList}/>
+      <ShoppingList shoppingItems={shoppingList} setShoppingItem={setShoppingItem}/>
+      
     </main>
   )
 }
