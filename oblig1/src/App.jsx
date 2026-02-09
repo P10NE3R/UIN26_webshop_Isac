@@ -5,7 +5,7 @@ import ShoppingList from './Components/ShoppingList'
 import { use, useState } from 'react'
 
 function App() {
-  /*Lager en liste med predefinerte ting*/
+
   const shoppingItems = [
       {
         id:0,
