@@ -1,7 +1,7 @@
 /* oprett nytt prosjekt */
 
 npm create vite@latest  . -- --template react
-npm install 
+
 
 
 
@@ -14,7 +14,7 @@ npm run dev
 /* Husk på at du må ha node-modules osv, hvis ting ikke funker npr du kjører komandoen */
 
 /* For å innstallere sass */
-npm i sass --save-dev 
+     npm i sass --save-dev 
 
 
 

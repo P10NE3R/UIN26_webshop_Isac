@@ -1,8 +1,8 @@
-// Importerer Link fra react-router-dom
-// Link brukes for navigasjon uten at siden lastes på nytt
+
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
 
 // Layout tar imot children som prop
 // children er det som ligger inni <Layout> ... </Layout> i App.jsx
@@ -12,24 +12,25 @@ export default function Layout({ children }){
         {/* Hovednavigasjon */}
         <nav className="main-nav">
 
-            {/* 
-              Går til startsiden "/"
-              Dette er en absolutt path fordi den starter med /
-            */}
-            <Link to="/">Hjem</Link>
+            {
 
-            {/* 
-              Relativ path: "categories"
-              Siden Layout ligger rundt hele <Routes>,
-              vil denne fungere som "/categories"
-            */}
-            <Link to="categories">Kategorier</Link>
+            }
+           
+            <Link to="/">Home</Link>
+            
+            {
+            
+            }
+          <Link to="/characters">Characters</Link>
 
-            {/* Går til "/about" */}
-            <Link to="about">Om oss</Link>
+   
+      
         </nav>
 
-        {/* 
+        {
+        
+        
+        /* 
           Her rendres alt som ligger inni Layout i App.jsx
           
           I ditt tilfelle:
@@ -41,9 +42,11 @@ export default function Layout({ children }){
         */}
         {children}
 
+
+
         {/* Footer som vises på alle sider */}
         <footer>
-            <p>2026 Utvikling av interaktive nettsteder - React router</p>
+            
         </footer>
         </>
     )
