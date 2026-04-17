@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { useState } from 'react'
 import { useOutletContext } from "react-router-dom"
 export default function SearchResults(){
     //I dette komponentet skal dere lagre verdiene som kommer fra søk og vise dem på siden. 
@@ -13,6 +14,7 @@ export default function SearchResults(){
             const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchQuery}`)
             const data = await res.json()
             setSearchResults([data])
+            console.log("Results ", searchResults)
             
         
         }catch(err){
@@ -27,5 +29,6 @@ export default function SearchResults(){
 
     return (
         <h1>Search Results for: {searchQuery}</h1>
+
     )
 }

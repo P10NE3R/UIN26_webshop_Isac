@@ -11,6 +11,7 @@ export default function Type(){
         const response = await fetch(`https://pokeapi.co/api/v2/type/${type}`)
         const data = await response.json()
         setTypeInfo(data.pokemon.slice(0,20))
+        console.log("Type", response)
     }
 
     useEffect(()=>{

@@ -29,3 +29,35 @@ import{BrowserRouter} from "react-router-dom"
 
 /*Skriv inn i app.jsx*/
 import{Routes, Route} from "react-router-dom"
+
+/* Sanity setup */
+/* Project må ha riktig kode*/
+npm create sanity@latest -- --project 8ofgarbz --dataset production --template clean
+
+
+/* Sanity setup gjennom terminal */
+npm create sanity@latest -- --dataset production --template clean
+
+
+
+
+
+
+/* Det burde se slik ut */
+✔ You are logged in as ihoie00@gmail.com using GitHub
+✔ Fetching existing projects
+
+✔ Create a new project or select an existing one Create new project
+✔ Project name: LEGOdudes2026
+✔ Select organization: P10NE3R [opHK5uPNV]
+✔ Dataset visibility Private (Authenticated user or token needed)
+ ›   Warning: Please note that while documents are private, assets (files and images) are still public
+✔ Creating dataset
+Dataset created successfully
+✔ Project output path: backend
+✔ 2 editors already configured for Sanity MCP
+✔ Do you want to use TypeScript? No
+✔ Bootstrapping files from template
+✔ Resolving latest module versions
+✔ Creating default project files
+✔ Package manager to use for installing dependencies? npm
