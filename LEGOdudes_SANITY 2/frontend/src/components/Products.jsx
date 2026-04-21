@@ -14,7 +14,7 @@ export default function Products({products, setCart}){
       fetchAllProducts()
     }, [])
 
-    console.log(sanityProducts)
+    console.log("sanity products =",sanityProducts)
 
     return (
     <div id="product-list">

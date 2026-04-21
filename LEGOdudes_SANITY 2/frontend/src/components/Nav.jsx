@@ -18,7 +18,7 @@ console.log(categories)
 
     return(
        <nav>
-          {categories?.map((c) => <Link to="">)}
+          {categories?.map((c, index) => <Link key={index} to={c.slug.current}>{c.categoryname}</Link>)}
       </nav>
     )
   }

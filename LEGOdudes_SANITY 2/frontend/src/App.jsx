@@ -1,7 +1,7 @@
 import './style/lego.css'
 import { products } from './assets/legodudes'
 import { useEffect, useState } from 'react'
-
+import CategoryPage from './components/CategoryPage'
 import Cart from './components/Cart'
 import Products from './components/Products'
 import Header from './components/Header'
@@ -64,8 +64,7 @@ function App() {
     <Layout setIsOpen={setIsOpen} cartQuantity={cartQuantity} isOpen={isOpen} cart={cart} setCart={setCart} totalSum={totalSum}>
       <Routes>
         <Route index element={<Page />} />
-        <Route path='city' element={<CategoryTitle title="City" />} />
-        <Route path='ninjago' element={<CategoryTitle title="Ninjago" />} />
+        <Route path="/kategori/:slug" element={<CategoryPage />} />
       </Routes>
     </Layout>
 
